@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>💘 Valentine?</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .buttons {
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            position: absolute;
+            transition: 0.2s;
+        }
+
+        #yes {
+            background: #ff4d6d;
+            color: white;
+            left: 50px;
+            top: 80px;
+        }
+
+        #no {
+            background: #555;
+            color: white;
+            left: 170px;
+            top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Would you like to be my Valentine? 💖</h1>
+
+    <div class="buttons">
+        <button id="yes" onclick="yesClick()">YES 💘</button>
+        <button id="no" onmouseover="moveNo()">NO 🙃</button>
+    </div>
+
+    <script>
+        function moveNo() {
+            const noBtn = document.getElementById("no");
+            const container = document.querySelector(".buttons");
+
+            const maxX = container.clientWidth - noBtn.offsetWidth;
+            const maxY = container.clientHeight - noBtn.offsetHeight;
+
+            const x = Math.random() * maxX;
+            const y = Math.random() * maxY;
+
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        }
+
+        function yesClick() {
+            document.body.innerHTML = `
+                <h1>Yaaaay! 💕🥰</h1>
+                <p style="color:white; font-size:22px;">
+                    Best Valentine ever 💖
+                </p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
